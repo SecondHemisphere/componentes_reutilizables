@@ -1,0 +1,156 @@
+<div class="container mt-4 mb-1">
+  <!-- Contenedor con scroll para tablas grandes -->
+  <div class="table-responsive" style="max-height: 300px; overflow-x: auto; overflow-y: auto">
+    <!-- TABLA -->
+    <table class="table table-bordered table-hover table-striped align-middle">
+      <!-- Encabezado (Columnas) -->
+      <thead class="table-primary">
+        <tr>
+          @for (col of colArray; track $index) {
+          <th
+            (click)="sort(col.field)"
+            style="cursor: pointer; white-space: nowrap"
+            class="px-3 py-2"
+          >
+            {{ col.header }}
+
+            <!-- Indicador visual de ordenamiento -->
+            @if (sortField === col.field) {
+            <span class="ms-1">
+              {{ sortDirection === 'asc' ? '▲' : '▼' }}
+            </span>
+            }
+          </th>
+          }
+
+          <!-- Columna de acciones (solo si está habilitada) -->
+          @if (showActions) {
+          <th class="px-3 py-2">Acciones</th>
+          }
+        </tr>
+      </thead>
+
+      <!-- CUERPO DE LA TABLA -->
+      <tbody>
+        @for (row of pagedData; track $index) {
+        <tr>
+          <!-- CELDAS -->
+          @for (col of colArray; track col.field) {
+
+          <td class="px-3 py-2">
+            <!-- 1. Texto largo: abre modal al hacer clic -->
+            @if (col.type === 'longtext') {
+            <span class="truncate-text" style="cursor: pointer" (click)="openModal(row[col.field])">
+              {{ row[col.field] }}
+            </span>
+
+            <!-- 2. lookup: muestra nombre en vez de ID -->
+            } @else if (col.lookup) {
+            {{ col.lookup(row[col.field]) }}
+
+            <!-- 3. Booleanos: mostrar Sí/No -->
+            } @else if (col.type === 'boolean') {
+            {{ row[col.field] ? 'Sí' : 'No' }}
+
+            <!-- 4. Valor normal -->
+            } @else {
+            {{ row[col.field] }}
+            }
+          </td>
+
+          }
+
+          <!-- ACCIONES CRUD -->
+          @if (showActions) {
+          <td class="px-3 py-2">
+            <!-- Botón editar -->
+            <button class="btn btn-primary btn-sm me-2" (click)="edit(row)">
+              <i class="bi bi-pencil-fill"></i>
+            </button>
+
+            <!-- Botón eliminar -->
+            <button class="btn btn-danger btn-sm me-2" (click)="delete(row)">
+              <i class="bi bi-trash-fill"></i>
+            </button>
+          </td>
+          }
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- PAGINACIÓN -->
+<div class="d-flex justify-content-between align-items-center mt-2 mb-3">
+  <!-- Indicador de página actual -->
+  <div class="fw-semibold">Página {{ currentPage }} de {{ totalPages }}</div>
+
+  <nav aria-label="Page navigation" class="mt-3">
+    <ul class="pagination justify-content-center">
+      <!-- Ir a primera página -->
+      <li class="page-item" [class.disabled]="currentPage === 1">
+        <a class="page-link" (click)="goToPage(1)">
+          <i class="bi bi-chevron-bar-left"></i>
+        </a>
+      </li>
+
+      <!-- Ir a página anterior -->
+      <li class="page-item" [class.disabled]="currentPage === 1">
+        <a class="page-link" (click)="prevPage()">
+          <i class="bi bi-chevron-left"></i>
+        </a>
+      </li>
+
+      <!-- Números de páginas -->
+      @for (page of pages; track page) {
+      <li class="page-item" [class.active]="page === currentPage">
+        <a class="page-link" (click)="goToPage(page)">
+          {{ page }}
+        </a>
+      </li>
+      }
+
+      <!-- Ir a página siguiente -->
+      <li class="page-item" [class.disabled]="currentPage === totalPages">
+        <a class="page-link" (click)="nextPage()">
+          <i class="bi bi-chevron-right"></i>
+        </a>
+      </li>
+
+      <!-- Ir a última página -->
+      <li class="page-item" [class.disabled]="currentPage === totalPages">
+        <a class="page-link" (click)="goToPage(totalPages)">
+          <i class="bi bi-chevron-bar-right"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<!-- FONDO OSCURO DEL MODAL -->
+@if (showModal) {
+<div class="custom-backdrop" (click)="closeModal()"></div>
+}
+<!-- MODAL PARA TEXTO LARGO -->
+@if (showModal) {
+<div class="custom-modal">
+  <div class="custom-modal-content">
+    <!-- Header del modal -->
+    <div class="custom-modal-header">
+      <h5>{{ modalTitle }}</h5>
+      <button class="close-btn" (click)="closeModal()">×</button>
+    </div>
+
+    <!-- Cuerpo con el texto expandido -->
+    <div class="custom-modal-body">
+      {{ selectedText }}
+    </div>
+
+    <!-- Botón cerrar del modal -->
+    <div class="custom-modal-footer">
+      <button class="btn btn-secondary" (click)="closeModal()">Cerrar</button>
+    </div>
+  </div>
+</div>
+}

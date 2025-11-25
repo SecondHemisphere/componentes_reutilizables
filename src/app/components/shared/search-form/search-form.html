@@ -1,0 +1,76 @@
+<div class="container-fluid p-0">
+  <!-- Buscador principal -->
+  <div class="input-group mb-3">
+    <input
+      type="text"
+      class="form-control"
+      [placeholder]="placeholder"
+      [formControl]="searchControl"
+    />
+
+    <!-- Botón buscar -->
+    <button class="btn btn-primary" (click)="search()"><i class="bi bi-search"></i> Buscar</button>
+
+    <!-- Botón limpiar -->
+    <button class="btn btn-outline-secondary" (click)="clear()">
+      <i class="bi bi-x-circle"></i> Limpiar
+    </button>
+  </div>
+
+  <!-- Filtros extras (solo si existen) -->
+  @if (filters.length > 0) {
+  <div class="row g-2">
+    @for (f of filters; track $index) {
+    <div class="col-md-3 col-sm-6">
+      <!-- Filtro tipo texto -->
+      @if (f.type === "text") {
+      <div class="form-group">
+        <label class="form-label">{{ f.label }}</label>
+        <input
+          type="text"
+          class="form-control"
+          [placeholder]="f.placeholder || f.label"
+          [formControl]="getControl(f.field)"
+        />
+      </div>
+      }
+
+      <!-- Filtro tipo número -->
+      @if (f.type === "number") {
+      <div class="form-group">
+        <label class="form-label">{{ f.label }}</label>
+        <input
+          type="number"
+          class="form-control"
+          [placeholder]="f.placeholder || f.label"
+          [formControl]="getControl(f.field)"
+        />
+      </div>
+      }
+
+      <!-- Filtro tipo fecha -->
+      @if (f.type === "date") {
+      <div class="form-group">
+        <label class="form-label">{{ f.label }}</label>
+        <input type="date" class="form-control" [formControl]="getControl(f.field)" />
+      </div>
+      }
+
+      <!-- Filtro tipo lista -->
+      @if (f.type === "select") {
+      <div class="form-group">
+        <label class="form-label">{{ f.label }}</label>
+        <select class="form-select" [formControl]="getControl(f.field)">
+          <option value="">Seleccione {{ f.label }}</option>
+
+          @for (opt of f.options; track opt) {
+          <option [value]="opt">{{ opt }}</option>
+          }
+        </select>
+      </div>
+      }
+    </div>
+    }
+  </div>
+  }
+</div>

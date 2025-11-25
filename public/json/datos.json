@@ -1,0 +1,273 @@
+{
+  "activities": [
+    {
+      "id": "1",
+      "title": "Taller de Fotografía Creativa",
+      "categoryId": 1,
+      "date": "2025-11-22",
+      "duration": "2h",
+      "location": "Sala de Arte A2",
+      "capacity": 25,
+      "description": "Aprende técnicas básicas y creativas de fotografía con cámara o celular.",
+      "active": true
+    },
+    {
+      "id": "2",
+      "title": "Torneo Interfacultades de Fútbol",
+      "categoryId": 2,
+      "date": "2025-12-05",
+      "duration": "4h",
+      "location": "Cancha Principal",
+      "capacity": 16,
+      "description": "Participa en el torneo deportivo más importante del semestre.",
+      "active": true
+    },
+    {
+      "id": "3",
+      "title": "Clase Abierta de Yoga y Relajación",
+      "categoryId": 3,
+      "date": "2025-11-30",
+      "duration": "1h 30min",
+      "location": "Auditorio Calm",
+      "capacity": 40,
+      "description": "Clase de yoga para todos los niveles enfocada en bienestar físico y mental.",
+      "active": false
+    },
+    {
+      "id": "4",
+      "title": "Taller de Pintura al Óleo",
+      "categoryId": 4,
+      "date": "2025-12-10",
+      "duration": "3h",
+      "location": "Sala de Arte B1",
+      "capacity": 20,
+      "description": "Aprende técnicas básicas de pintura al óleo con instructores especializados.",
+      "active": true
+    },
+    {
+      "id": "5",
+      "title": "Carrera 5K Universitaria",
+      "categoryId": 2,
+      "date": "2025-12-15",
+      "duration": "1h",
+      "location": "Pista Atlética",
+      "capacity": 200,
+      "description": "Competencia deportiva abierta para toda la comunidad universitaria.",
+      "active": true
+    },
+    {
+      "id": "6",
+      "title": "Taller de Danza Moderna",
+      "categoryId": 1,
+      "date": "2025-11-28",
+      "duration": "2h",
+      "location": "Estudio de Danza 3",
+      "capacity": 30,
+      "description": "Aprende los fundamentos de la danza moderna con coreógrafos invitados.",
+      "active": true
+    },
+    {
+      "id": "7",
+      "title": "Concierto Acústico Universitario",
+      "categoryId": 5,
+      "date": "2025-12-18",
+      "duration": "2h",
+      "location": "Auditorio Central",
+      "capacity": 120,
+      "description": "Presentación musical de artistas y bandas universitarias.",
+      "active": false
+    },
+    {
+      "id": "8",
+      "title": "Clase Intensiva de Meditación",
+      "categoryId": 3,
+      "date": "2025-12-02",
+      "duration": "1h",
+      "location": "Sala Zen",
+      "capacity": 35,
+      "description": "Sesión guiada de meditación para reducir estrés y mejorar enfoque.",
+      "active": true
+    },
+    {
+      "id": "10",
+      "title": "Torneo Relámpago de Baloncesto",
+      "categoryId": 2,
+      "date": "2025-12-03",
+      "duration": "3h",
+      "location": "Coliseo Deportivo",
+      "capacity": 40,
+      "description": "Competencia rápida de equipos mixtos de baloncesto.",
+      "active": true
+    },
+    {
+      "id": "11",
+      "title": "Taller de Cerámica y Modelado",
+      "categoryId": 4,
+      "date": "2025-12-07",
+      "duration": "2h",
+      "location": "Taller Creativo 1",
+      "capacity": 18,
+      "description": "Aprende técnicas de modelado en arcilla y elaboración de piezas decorativas.",
+      "active": true
+    },
+    {
+      "id": "12",
+      "title": "Sesión de Calistenia al Aire Libre",
+      "categoryId": 2,
+      "date": "2025-12-01",
+      "duration": "1h",
+      "location": "Parque Deportivo Norte",
+      "capacity": 50,
+      "description": "Entrenamiento funcional al aire libre para todos los niveles.",
+      "active": true
+    },
+    {
+      "id": "13",
+      "title": "Círculo de Lectura Universitario",
+      "categoryId": 1,
+      "date": "2025-12-09",
+      "duration": "1h 30min",
+      "location": "Biblioteca Central",
+      "capacity": 20,
+      "description": "Conversatorio mensual sobre obras literarias seleccionadas.",
+      "active": true
+    },
+    {
+      "id": "14",
+      "title": "Clase de Respiración Consciente",
+      "categoryId": 3,
+      "date": "2025-11-27",
+      "duration": "1h",
+      "location": "Sala Calm 2",
+      "capacity": 25,
+      "description": "Aprende técnicas de respiración para mejorar bienestar emocional.",
+      "active": true
+    },
+    {
+      "id": "15",
+      "title": "Taller de Acuarela Avanzada",
+      "categoryId": 4,
+      "date": "2025-12-04",
+      "duration": "2h",
+      "location": "Sala de Arte A1",
+      "capacity": 15,
+      "description": "Técnicas avanzadas de acuarela con enfoque creativo.",
+      "active": true
+    },
+    {
+      "id": "16",
+      "title": "Competencia Universitaria de Ajedrez",
+      "categoryId": 1,
+      "date": "2025-12-11",
+      "duration": "4h",
+      "location": "Sala Multiusos 5",
+      "capacity": 60,
+      "description": "Torneo oficial de ajedrez abierto para todos los estudiantes.",
+      "active": true
+    },
+    {
+      "id": "17",
+      "title": "Taller de Técnicas Vocales",
+      "categoryId": 5,
+      "date": "2025-12-06",
+      "duration": "2h",
+      "location": "Sala Acústica",
+      "capacity": 30,
+      "description": "Mejora tu proyección y técnica vocal con profesores especializados.",
+      "active": false
+    },
+    {
+      "id": "18",
+      "title": "Sesión de Pilates Suave",
+      "categoryId": 3,
+      "date": "2025-12-08",
+      "duration": "1h",
+      "location": "Sala Zen 2",
+      "capacity": 30,
+      "description": "Clase de pilates enfocada en estiramiento y fortalecimiento.",
+      "active": true
+    },
+    {
+      "id": "19",
+      "title": "Noche de Cine Cultural",
+      "categoryId": 1,
+      "date": "2025-12-13",
+      "duration": "2h 30min",
+      "location": "Auditorio C4",
+      "capacity": 150,
+      "description": "Proyección de películas seleccionadas con temática cultural.",
+      "active": true
+    },
+    {
+      "id": "20",
+      "title": "Maratón de Baile Fitness",
+      "categoryId": 2,
+      "date": "2025-12-14",
+      "duration": "2h",
+      "location": "Coliseo Deportivo",
+      "capacity": 80,
+      "description": "Sesión intensa de baile para mejorar condición física.",
+      "active": true
+    },
+    {
+      "id": "21",
+      "title": "Taller de Escritura Creativa",
+      "categoryId": 1,
+      "date": "2025-12-12",
+      "duration": "2h",
+      "location": "Sala Letras 1",
+      "capacity": 20,
+      "description": "Aprende técnicas narrativas y mejora tu estilo de escritura.",
+      "active": true
+    },
+    {
+      "id": "22",
+      "title": "Feria de Bienestar Universitario",
+      "categoryId": 3,
+      "date": "2025-12-16",
+      "duration": "5h",
+      "location": "Plazoleta Central",
+      "capacity": 500,
+      "description": "Stands informativos, charlas y actividades de promoción del bienestar.",
+      "active": true
+    },
+    {
+      "id": "23",
+      "title": "Exhibición de Arte Digital",
+      "categoryId": 4,
+      "date": "2025-12-19",
+      "duration": "4h",
+      "location": "Galería Digital",
+      "capacity": 100,
+      "description": "Muestra de proyectos digitales y multimedia desarrollados por estudiantes.",
+      "active": true
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Cultura",
+      "active": true
+    },
+    {
+      "id": "2",
+      "name": "Deporte",
+      "active": true
+    },
+    {
+      "id": "3",
+      "name": "Bienestar",
+      "active": true
+    },
+    {
+      "id": "4",
+      "name": "Arte",
+      "active": true
+    },
+    {
+      "id": "5",
+      "name": "Música",
+      "active": false
+    }
+  ]
+}

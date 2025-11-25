@@ -1,0 +1,11 @@
+<app-search-form
+  placeholder="Buscar actividades..."
+  [filters]="activitiesFilters"
+  (onSearch)="search($event)"
+></app-search-form>
+
+<app-data-table
+  [colArray]="columnList"
+  [gridData]="activities"
+  [showActions]="false"
+></app-data-table>
